@@ -1,0 +1,231 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f1f5f9;
+    color:#1f2937;
+    padding:30px;
+}
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:3rem;
+    color:#111827;
+}
+
+/* Search Section */
+
+.search-box{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+input{
+    width:400px;
+    padding:15px;
+    border:2px solid #cbd5e1;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus{
+    border-color:#475569;
+}
+
+button{
+    padding:15px 20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#475569;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#334155;
+    transform:scale(1.05);
+}
+
+/* Loader */
+
+.loader{
+    text-align:center;
+    display:none;
+    font-size:25px;
+    margin:20px;
+    color:#334155;
+}
+
+/* Profile Card */
+
+.profile-card{
+    background:white;
+    color:black;
+    border-radius:20px;
+    padding:35px;
+    display:flex;
+    gap:35px;
+    align-items:center;
+    margin-bottom:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.profile-card:hover{
+    transform:translateY(-5px);
+}
+
+.profile-card img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #475569;
+}
+
+.profile-card h2{
+    margin-bottom:10px;
+    font-size:2rem;
+    color:#111827;
+}
+
+.profile-card p{
+    margin-bottom:15px;
+    color:#4b5563;
+}
+
+/* Stats */
+
+.stats{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.stat{
+    background:#475569;
+    color:white;
+    padding:15px 20px;
+    border-radius:12px;
+    min-width:120px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* Repo Section */
+
+.repo-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.repo-header h2{
+    color:#111827;
+    font-size:2rem;
+}
+
+#repos{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
+}
+
+/* Repo Card */
+
+.repo-card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    border-left:6px solid #475569;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.repo-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.repo-card a{
+    text-decoration:none;
+    color:#2563eb;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.repo-card p{
+    margin-top:10px;
+    color:#374151;
+}
+
+/* Error */
+
+.error{
+    text-align:center;
+    color:#dc2626;
+    font-size:24px;
+    margin-top:20px;
+}
+
+@media(max-width:768px){
+    .profile-card{
+        flex-direction:column;
+        text-align:center;
+    }
+    .profile-card img{
+        width:180px;
+        height:180px;
+    }
+    .stats{
+        justify-content:center;
+    }
+    input{
+        width:100%;
+    }
+    .search-box{
+        flex-direction:column;
+        align-items:center;
+    }
+    .repo-header{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+@media(max-width:320px){
+    body{padding:15px;}
+    h1{font-size:1.5rem;}
+    input{padding:10px;font-size:14px;}
+    button{padding:10px 15px;font-size:14px;}
+    .profile-card{padding:20px;gap:15px;}
+    .profile-card img{width:120px;height:120px;}
+    .profile-card h2{font-size:1.3rem;}
+    .stat{padding:10px;min-width:80px;font-size:0.85rem;}
+    .stats{gap:8px;}
+    #repos{grid-template-columns:1fr;}
+    .repo-card{padding:15px;}
+    .repo-card a{font-size:16px;}
+}
